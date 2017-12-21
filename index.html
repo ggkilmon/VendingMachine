@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Vending Machine</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/css/vendingApp.css" />
+    </head>
+    <body ng-app="VendingApp">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">
+                    <div id="divDisplayScreen" ng-controller="DisplayController" ng-model="DisplayScreen" style="margin-bottom: 10px">
+                        <h2>{{DisplayScreen.Line1}}</h2>
+                        <h3>{{DisplayScreen.Line2}}</h3>
+                    </div>
+                    <div id="divCoinInsert" ng-controller="CoinInsertController" style="margin-bottom: 10px">
+                        <div class="container">
+                            <div class="row" style="margin-bottom: 10px;">
+                                <div class="col text-center">
+                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.Large" ng-click="InsertCoin($event)">Quarter</button></div>
+                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.ExtraSmall" ng-click="InsertCoin($event)">Dime</button></div>
+                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.Medium" ng-click="InsertCoin($event)">Nickel</button></div>
+                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.Small" ng-click="InsertCoin($event)">Penny</button></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="d-inline-block"><button type="button" value="Return" ng-click="CoinReturn()">Return Coin(s)</button></div>
+                                    <div class="d-inline-block"><button type="button" value="Update" ng-click="UpdateDisplay()">Update Display</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divCoinReturn" ng-controller="DisplayController" ng-model="CoinReturn">
+                        <h3>Coin Return</h3>
+                        <div>{{CoinReturn.Line1}}</div>
+                        <div>{{CoinReturn.Line2}}</div>
+                        <div class="text-center"><button type="button" value="Take" ng-click="TakeCoins()">Take Coin(s)</button></div>
+                    </div>
+                </div>
+                <div class="col-md d-flex align-items-center">
+                    <div id="divProduct" ng-controller="ProductController">
+                        <div ng-repeat="p in ProductList" class="d-inline-block product">
+                            <div class="product"><button type="button" value="{{p.Name}}" ng-click="VendItem($event)">{{p.Name}}</button></div>
+                            <div class="product">${{p.Price}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="assets/libs/angular.min.js"></script>
+        <script src="models/DisplayScreen.js"></script>
+        <script src="models/Coin.js"></script>
+        <script src="models/Product.js"></script>
+        <script src="app/app.module.js"></script>
+        <script src="app/display/DisplayService.js"></script>
+        <script src="app/display/DisplayController.js"></script>
+        <script src="app/coin/CoinReturnService.js"></script>
+        <script src="app/coin/CoinInsertController.js"></script>
+        <script src="app/product/ProductService.js"></script>
+        <script src="app/product/ProductController.js"></script>
+
+        <script src="assets/js/formatCurrency.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
