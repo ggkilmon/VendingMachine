@@ -11,3 +11,27 @@ button #coin{
     padding-left: 10px;
     padding-right: 10px;
 }
+
+#divCoinReturn{
+    background-color: #a5a5a5
+}
+
+#divCoinReturn h3, #divCoinReturn div{
+    text-align: center;
+}
+
+#divDisplayScreen{
+    text-align: center;
+    background-color: black;
+    color: green;
+    height: 80px;
+}
+
+#divProduct{
+    background-color: #e5e5e5;
+    height: 100%;
+}
+
+#divProduct div{
+    margin-top: 25%;
+}

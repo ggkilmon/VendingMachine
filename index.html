@@ -33,7 +33,7 @@
                             </div>
                         </div>
                     </div>
-                    <div id="divCoinReturn" ng-controller="DisplayController" ng-model="CoinReturn">
+                    <div id="divCoinReturn" ng-controller="DisplayController" ng-model="CoinReturn" class="rounded-bottom">
                         <h3>Coin Return</h3>
                         <div>{{CoinReturn.Line1}}</div>
                         <div>{{CoinReturn.Line2}}</div>
@@ -41,10 +41,10 @@
                     </div>
                 </div>
                 <div class="col-md d-flex align-items-center">
-                    <div id="divProduct" ng-controller="ProductController">
+                    <div id="divProduct" ng-controller="ProductController" class="rounded">
                         <div ng-repeat="p in ProductList" class="d-inline-block product">
                             <div class="product"><button type="button" value="{{p.Name}}" ng-click="VendItem($event)">{{p.Name}}</button></div>
-                            <div class="product">{{p.Price}}</div>
+                            <div class="product">{{p.PriceFormatted}}</div>
                         </div>
                     </div>
                 </div>
