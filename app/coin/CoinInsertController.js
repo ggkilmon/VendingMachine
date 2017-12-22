@@ -1,5 +1,5 @@
 angular.module('VendingApp').controller('CoinInsertController', ['$scope', 'DisplayService', 'CoinReturnService', function($scope, DisplayService, CoinReturnService){
-    CoinReturnService.UpdateCoinReturn('', '$' + CurrencyFormatted(coinReturn));
+    CoinReturnService.UpdateCoinReturn('', CurrencyFormatted(coinReturn));
     
     $scope.InsertCoin = function(event){
         var coinInserted = event.target.value;
@@ -8,11 +8,11 @@ angular.module('VendingApp').controller('CoinInsertController', ['$scope', 'Disp
         if (Coin.IsValidCoin(coinInserted)){
             currentMoney += coinValue;
             
-            DisplayService.UpdateDisplay('', '$' + CurrencyFormatted(currentMoney));
+            DisplayService.UpdateDisplay('', CurrencyFormatted(currentMoney));
         }else{
             coinReturn += coinValue;
 
-            CoinReturnService.UpdateCoinReturn('', '$' + CurrencyFormatted(coinReturn));
+            CoinReturnService.UpdateCoinReturn('', CurrencyFormatted(coinReturn));
         }
     };
 
@@ -20,8 +20,8 @@ angular.module('VendingApp').controller('CoinInsertController', ['$scope', 'Disp
         coinReturn += currentMoney;
         currentMoney = 0;
 
-        DisplayService.UpdateDisplay('INSERT COIN', '');
-        CoinReturnService.UpdateCoinReturn('', '$' + CurrencyFormatted(coinReturn));
+        DisplayService.UpdateDisplay(INSERT_COIN, '');
+        CoinReturnService.UpdateCoinReturn('', CurrencyFormatted(coinReturn));
     };
 
     $scope.UpdateDisplay = function(){

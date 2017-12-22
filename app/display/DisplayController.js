@@ -5,6 +5,6 @@ angular.module('VendingApp').controller('DisplayController', ['$scope', 'Display
     $scope.TakeCoins = function(){
         coinReturn = 0;
 
-        CoinReturnService.UpdateCoinReturn('', '$' + CurrencyFormatted(coinReturn));
+        CoinReturnService.UpdateCoinReturn('', CurrencyFormatted(coinReturn));
     }
 }]);

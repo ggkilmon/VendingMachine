@@ -15,6 +15,6 @@ angular.module('VendingApp').service('ProductService', function(){
             }
         }
 
-        return new Product("Not Found", 0);
+        return new Product(NOT_FOUND, 0);
     }
 });
