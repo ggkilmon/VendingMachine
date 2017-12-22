@@ -1,8 +1,8 @@
 angular.module('VendingApp').controller('CoinInsertController', ['$scope', 'DisplayService', 'CoinReturnService', function($scope, DisplayService, CoinReturnService){
     CoinReturnService.UpdateCoinReturn('', CurrencyFormatted(coinReturn));
     
-    $scope.InsertCoin = function(event){
-        var coinInserted = event.target.value;
+    $scope.InsertCoin = function(coinType){
+        var coinInserted = coinType;
         var coinValue = Coin.GetCoinValue(coinInserted);
 
         if (Coin.IsValidCoin(coinInserted)){

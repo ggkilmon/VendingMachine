@@ -19,10 +19,10 @@
                         <div class="container">
                             <div class="row" style="margin-bottom: 10px;">
                                 <div class="col text-center">
-                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.Large" ng-click="InsertCoin($event)">Quarter</button></div>
-                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.ExtraSmall" ng-click="InsertCoin($event)">Dime</button></div>
-                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.Medium" ng-click="InsertCoin($event)">Nickel</button></div>
-                                    <div class="d-inline-block"><button class="coin" type="button" value="Coin.Small" ng-click="InsertCoin($event)">Penny</button></div>
+                                    <div class="d-inline-block"><div class="coin rounded-circle" style="background-color: silver; height: 75px; width: 75px;" ng-click="InsertCoin('Coin.Large')">25¢</div></div>
+                                    <div class="d-inline-block"><div class="coin rounded-circle" style="background-color: silver; height: 40px; width: 40px;" ng-click="InsertCoin('Coin.ExtraSmall')">10¢</div></div>
+                                    <div class="d-inline-block"><div class="coin rounded-circle" style="background-color: silver; height: 60px; width: 60px;" ng-click="InsertCoin('Coin.Medium')">5¢</div></div>
+                                    <div class="d-inline-block"><div class="coin rounded-circle" style="background-color: #b87333; height: 50px; width: 50px;" ng-click="InsertCoin($event)">1¢</div></div>
                                 </div>
                             </div>
                             <div class="row">
