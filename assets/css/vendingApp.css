@@ -35,3 +35,8 @@ button #coin{
 #divProduct div{
     margin-top: 25%;
 }
+
+.glyph-icon svg{
+    width: 32px;
+    height: 32px;
+}

@@ -43,6 +43,7 @@
                 <div class="col-md d-flex align-items-center">
                     <div id="divProduct" ng-controller="ProductController" class="rounded">
                         <div ng-repeat="p in ProductList" class="d-inline-block product">
+                            <div class="product"><img src="assets/images/{{p.ImageName}}" /></div>
                             <div class="product"><button type="button" value="{{p.Name}}" ng-click="VendItem($event)">{{p.Name}}</button></div>
                             <div class="product">{{p.PriceFormatted}}</div>
                         </div>
