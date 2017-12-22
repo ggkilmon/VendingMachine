@@ -44,7 +44,7 @@
                     <div id="divProduct" ng-controller="ProductController">
                         <div ng-repeat="p in ProductList" class="d-inline-block product">
                             <div class="product"><button type="button" value="{{p.Name}}" ng-click="VendItem($event)">{{p.Name}}</button></div>
-                            <div class="product">${{p.Price}}</div>
+                            <div class="product">{{p.Price}}</div>
                         </div>
                     </div>
                 </div>
